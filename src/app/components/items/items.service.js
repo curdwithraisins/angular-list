@@ -27,6 +27,7 @@
       chooseItem: chooseItem,
       getData: getData,
       markAll: markAll,
+      pushAnimal: pushAnimal,
       removeType: removeType,
       selectItems: selectItems
     };
@@ -89,6 +90,10 @@
         });
       });
       selectItems.length = 0;
+    }
+
+    function pushAnimal(newAnimal) {
+      data.items.push({name: newAnimal, select: false, type: []})
     }
 
     function removeType(type) {

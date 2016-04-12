@@ -22,19 +22,18 @@
   <button class="btn btn-default btn-xs" ng-click="mainCtrl.cleanAll()">Clean and clear</button>
 
   <div class="row items-table">
-
     <div class="col-md-6 col-xs-6" ng-controller="AnimalController as animalsCtrl">
-      <div ng-repeat="item in animalsCtrl.items"
-           ng-click="item.select = !item.select; animalsCtrl.chooseItem(item)"
-           class="item" ng-class="{check: item.select}">
+      <div class="item" ng-class="{check: item.select}"
+           ng-repeat="item in (animalsCtrl.filtedAnimals = (animalsCtrl.items | filter: newAnimal))"
+           ng-click="item.select = !item.select; animalsCtrl.chooseItem(item)">
         {{$index + 1}}. {{item.name}} <span ng-repeat="type in item.type" class="label label-primary">{{type}}</span>
       </div>
+      <input ng-keyup="$event.keyCode == 13 && animalsCtrl.addAnimal(newAnimal)" ng-model="newAnimal"/>
     </div>
 
     <div class="col-md-6 col-xs-6" ng-controller="TypeController as typeCtrl">
       <div ng-repeat="type in typeCtrl.types">
-        <div class="btn btn-primary" ng-click="typeCtrl.addType(type)">
-          {{type.type}}
+        <div class="btn btn-primary" ng-click="typeCtrl.addType(type)">{{type.type}}
           <div class="button-exit" ng-click="typeCtrl.removeType(type, $event)" ng-show="type.check">
             <span class="glyphicon glyphicon-remove"></span>
           </div>

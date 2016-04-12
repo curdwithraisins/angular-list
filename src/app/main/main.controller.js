@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($document, Items) {
+  function MainController(Items) {
     var vm = this;
 
     vm.markAll = function () {

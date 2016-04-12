@@ -14,5 +14,11 @@
     vm.chooseItem = function (item) {
       Items.chooseItem(item);
     };
+
+    vm.addAnimal = function (newAnimal) {
+      if (!vm.filtedAnimals.length) {
+        Items.pushAnimal(newAnimal);
+      }
+    };
   }
 })();

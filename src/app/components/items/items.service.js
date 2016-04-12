@@ -28,8 +28,7 @@
       getData: getData,
       markAll: markAll,
       pushAnimal: pushAnimal,
-      removeType: removeType,
-      selectItems: selectItems
+      removeType: removeType
     };
     return service;
 

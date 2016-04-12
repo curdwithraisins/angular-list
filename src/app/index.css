@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 2em !important; }
+
+.items-table {
+  margin: 1em; }
+  .items-table .check {
+    background-color: #f7e1b5; }
+  .items-table .item:hover {
+    background-color: #d5d5d5; }
+  .items-table div .item {
+    padding: .5em;
+    border-radius: 5px; }
+  .items-table div span {
+    margin: .3em; }
+  .items-table div .btn {
+    margin: .2em; }
+  .items-table div .button-exit {
+    display: inline-block; }
+
+/*# sourceMappingURL=index.css.map */
